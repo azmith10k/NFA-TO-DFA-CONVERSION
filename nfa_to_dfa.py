@@ -11,7 +11,7 @@ for i in range(n):
     for j in range(t):
         path = input("path : ")               #Enter path eg : a or b in {a,b} 0 or 1 in {0,1}
         print("Enter end state from state {} travelling through path {} : ".format(state,path))
-        reaching_state = [x for x in input().split()]  #Enter all the end states that 
+        reaching_state = [x for x in input().split()]  #Enter all the end states that
         nfa[state][path] = reaching_state     #Assigning the end states to the paths in dictionary
 
 print("\nNFA :- \n")
@@ -45,11 +45,11 @@ for y in range(t):
  
 # Computing the other rows of DFA transition table
 
-while len(new_states_list) != 0:                     #consition is true only if the new_states_list is not empty
+while len(new_states_list) != 0:                     #condition is true only if the new_states_list is not empty
     dfa[new_states_list[0]] = {}                     #taking the first element of the new_states_list and examining it
     for _ in range(len(new_states_list[0])):
         for i in range(len(path_list)):
-            temp = []                                #creating a temporay list
+            temp = []                                #creating a temporary list
             for j in range(len(new_states_list[0])):
                 temp += nfa[new_states_list[0][j]][path_list[i]]  #taking the union of the states
             s = ""
